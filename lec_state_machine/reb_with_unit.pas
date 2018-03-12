@@ -1,13 +1,14 @@
-PROGRAM RemoveExtraBlanks;
-USES BlanksStateMachine;
+PROGRAM RemoveExtraBlanks(INPUT, OUTPUT);
+USES
+  BlanksStateMachine;
 VAR
   Ch: CHAR;
 BEGIN {RemoveExtraBlanks}
-  WHILE (NOT EOLN)
+  WHILE NOT EOLN
   DO
     BEGIN
       READ(Ch);
-      ProcessSymbol(Ch, OUTPUT);
+      ProcessSymbol(Ch, OUTPUT)
     END;
-  WRITELN;
-END.  {RemoveExtraBlanks}
+  WRITELN
+END. {RemoveExtraBlanks}

@@ -1,4 +1,4 @@
-PROGRAM RemoveExtraBlanks;
+PROGRAM RemoveExtraBlanks(INPUT, OUTPUT);
 VAR
   Ch: CHAR;
   BeginFlag: CHAR; {Флаг, обозначающий начало строки}
@@ -8,7 +8,7 @@ BEGIN {RemoveExtraBlanks}
   BeginFlag := 'T';
   SpaceFlag := 'F';
   
-  WHILE (NOT EOLN)
+  WHILE NOT EOLN
   DO
     BEGIN
       READ(Ch);
@@ -20,10 +20,10 @@ BEGIN {RemoveExtraBlanks}
             WRITE(' ');
           WRITE(Ch);
           BeginFlag := 'F';
-          SpaceFlag := 'F';
+          SpaceFlag := 'F'
         END
       ELSE
-        SpaceFlag := 'T';
+        SpaceFlag := 'T'
     END;
-  WRITELN;
-END.  {RemoveExtraBlanks}
+  WRITELN
+END. {RemoveExtraBlanks}

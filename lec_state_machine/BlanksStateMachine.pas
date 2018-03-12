@@ -8,12 +8,12 @@ VAR
   State: CHAR;
   
 PROCEDURE Init;
-BEGIN
+BEGIN {Init}
   State := 'B'
-END;
+END; {Init}
 
 PROCEDURE ProcessSymbol(Ch: CHAR; VAR F: TEXT);
-BEGIN
+BEGIN {ProcessSymbol}
   IF Ch <> ' '
   THEN
     BEGIN
@@ -26,9 +26,9 @@ BEGIN
   ELSE
     IF State = 'W'
     THEN
-      State := 'S';
-END;
+      State := 'S'
+END; {ProcessSymbol}
 
-BEGIN
-  Init;
-END.
+BEGIN {BlanksStateMachine}
+  Init
+END. {BlanksStateMachine}

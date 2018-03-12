@@ -1,4 +1,4 @@
-PROGRAM RemoveExtraBlanks;
+PROGRAM RemoveExtraBlanks(INPUT, OUTPUT);
 VAR
   Ch: CHAR;
 BEGIN {RemoveExtraBlanks}
@@ -33,7 +33,7 @@ BEGIN {RemoveExtraBlanks}
       {Если встретился не пробел, то это начало следующего слова}
       IF Ch <> ' '
       THEN
-        WRITE(' ', Ch); {ставим пробел перед словом}
+        WRITE(' ', Ch) {ставим пробел перед словом}
     END;
-  WRITELN;
-END.  {RemoveExtraBlanks}
+  WRITELN
+END. {RemoveExtraBlanks}
